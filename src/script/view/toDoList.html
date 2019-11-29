@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="myApp">
+
+<head>
+  <meta charset="UTF-8">
+  <title>To Do App</title>
+  <!-- <script src="controller/angular.min.js"></script> -->
+  <script src="../controller/todo.controller.js"></script>
+  <!-- <script src="controller/material.controller.js"></script> -->
+  <link rel="stylesheet" href="style/todo.css">
+</head>
+
+<body>
+  <h1>Todo list</h1>
+  <div ng-controller="todoCtrl">
+    <p>Finished Tasks: {{getDoneCount()}} / {{tasks.length}} ­
+      <button ng-click="deleteDone()">Delete Done</button>
+    </p>
+    <ul>
+      <li ng-repeat="task in tasks">
+        <input type="checkbox" ng-model="task.done">
+        <span class="done-{{task.done}}">{{task.body}}</span>
+        <a href ng-click="tasks.splice($index, 1)">［削除］</a>
+      </li>
+    </ul>
+    <form ng-submit="addNew()">
+      <input type="text" ng-model="newTaskBody">
+      <input type="submit" value="add">
+    </form>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+.done-true {
+  color: gray;
+  text-decoration: line-through;
+}
+
+h1 {
+  text-align: center;
+  border-bottom-style: dashed;
+}
+
+div {
+  margin-left: 20px;
+}
